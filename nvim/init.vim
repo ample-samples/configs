@@ -150,7 +150,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set autoindent
-set scrolloff=12
+set scrolloff=0
 
 " Search and case
 set ignorecase
