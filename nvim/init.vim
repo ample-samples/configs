@@ -1,5 +1,8 @@
 call plug#begin()
     
+    " DAP 
+    Plug 'mfussenegger/nvim-dap'
+    
     " Better . repeat
     Plug 'tpope/vim-repeat'
 
@@ -18,7 +21,6 @@ call plug#begin()
 
     " Rainbow brackets
     Plug 'https://github.com/mrjones2014/nvim-ts-rainbow.git'
-
 
     " easymotion for finding strings and characters
     Plug 'easymotion/vim-easymotion'
@@ -109,6 +111,9 @@ let mapleader=" "
 " Keymaps
 nnoremap <leader>t :NvimTreeFindFileToggle<CR>
 
+
+
+
 " Use system clipboard
 " set clipboard+=unnamedplus
 
@@ -150,13 +155,14 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set autoindent
-set scrolloff=0
+set scrolloff=5
 
 " Search and case
 set ignorecase
 set incsearch
 set smartcase
 set nohlsearch
+
 " Disable autocommenting on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -167,4 +173,5 @@ source ~/.config/nvim/lua/plugins/nvim_cmp.lua
 source ~/.config/nvim/lua/plugins/autosave.lua
 source ~/.config/nvim/lua/plugins/formatter.lua
 source ~/.config/nvim/lua/plugins/windows.lua
+source ~/.config/nvim/lua/plugins/DAP.lua
 
