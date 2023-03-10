@@ -20,6 +20,12 @@ vim.g.loaded_netrwPlugin = 1
 -- Plenary
 local async = require "plenary.async"
 
+-- Neodev and for DAP-UI
+require("neodev").setup({
+  library = { plugins = { "nvim-dap-ui" }, types = true },
+  ...
+})
+
 -- Empty setups using defaults
 require('nvim_comment').setup()
 require("nvim-tree").setup()
@@ -28,6 +34,8 @@ require('telescope').setup {}
 require('telescope').load_extension('fzf')
 require("nvim-autopairs").setup {}
 require("leap").set_default_keymaps()
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 -- Remove EOB end of buffer characters
 vim.opt.fillchars:append { eob = " " }

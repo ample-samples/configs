@@ -1,5 +1,14 @@
 call plug#begin()
-    
+
+    " useful for use with DAP ui
+    Plug 'folke/neodev.nvim'
+
+    " UI for nvim-dap
+    Plug 'rcarriga/nvim-dap-ui'
+
+    " Bufferline bar
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+
     " DAP 
     Plug 'mfussenegger/nvim-dap'
     
@@ -17,7 +26,7 @@ call plug#begin()
     Plug 'anuvyklack/animation.nvim'
 
     " coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Rainbow brackets
     Plug 'https://github.com/mrjones2014/nvim-ts-rainbow.git'
@@ -101,17 +110,30 @@ call plug#begin()
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
 
-    Plug 'SirVer/ultisnips'
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+    " Plug 'SirVer/ultisnips'
+    " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
     " End of nvim-cmp
 
 call plug#end()
 
 let mapleader=" "
-" Keymaps
+" Start of keymaps
+
+    " Nvim-tree
 nnoremap <leader>t :NvimTreeFindFileToggle<CR>
 
+    " DAP
+nnoremap <F5> :lua require'dap'.continue()<CR>
+nnoremap <F4> :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <F7> :lua require'dap'.step_over()<CR>
+nnoremap <F8> :lua require'dap'.step_into()<CR>
+nnoremap <F6> :lua require("dapui").toggle()<CR>
+nnoremap <F9> :lua require'dap'.step_out()<CR>
 
+
+" nnoremap <F6> :lua require'dap'.repl.open()<CR>
+
+" End of keymaps
 
 
 " Use system clipboard
@@ -151,9 +173,9 @@ let g:ale_sign_warning = '⚠️'
 
 " b settings
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set autoindent
 set scrolloff=5
 
@@ -168,10 +190,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 source ~/.config/nvim/lua/init.lua
 source ~/.config/nvim/lua/plugins/01treesitter.lua
-source ~/.config/nvim/lua/plugins/coc.lua
+" source ~/.config/nvim/lua/plugins/coc.lua
 source ~/.config/nvim/lua/plugins/nvim_cmp.lua
 source ~/.config/nvim/lua/plugins/autosave.lua
 source ~/.config/nvim/lua/plugins/formatter.lua
 source ~/.config/nvim/lua/plugins/windows.lua
 source ~/.config/nvim/lua/plugins/DAP.lua
-
+source ~/.config/nvim/lua/plugins/bufferline.lua

@@ -166,7 +166,7 @@ for i in groups:
 
 layouts = [
     layout.Columns(
-        margin=[0, 5, 5, 5],
+        margin=[5, 5, 5, 5],
         border_width=4,
         border_focus=foreground,
         border_normal='#282828',
@@ -202,7 +202,11 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                #widget.CurrentLayoutIcon(custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")]),
+                # widget.CurrentLayoutIcon(
+                #     custom_icon_paths = [
+                #         os.path.expanduser("~/.config/qtile/icons")
+                #         ]
+                #     ),
                 # widget.CurrentLayout(),
                 widget.Prompt(
                     font="DroidSansMono Nerd Font",
@@ -266,7 +270,7 @@ dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(border_width=4, border_focus=foreground, border_normal=background,
+floating_layout = layout.Floating(border_width=0, border_focus=foreground, border_normal=background,
                                   float_rules=[
                                       # Run the utility of `xprop` to see the wm class and name of an X client.
                                       *layout.Floating.default_float_rules,
@@ -278,6 +282,7 @@ floating_layout = layout.Floating(border_width=4, border_focus=foreground, borde
                                       Match(title="branchdialog"),  # gitk
                                       # GPG key password entry
                                       Match(title="pinentry"),
+                                      Match(title="Ulauncher"),
                                   ]
                                   )
 auto_fullscreen = True

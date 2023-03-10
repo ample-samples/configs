@@ -1,3 +1,4 @@
+-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
 local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable',
@@ -23,3 +24,4 @@ dap.configurations.javascript = {
     processId = require'dap.utils'.pick_process,
   },
 }
+require("dapui").setup()
