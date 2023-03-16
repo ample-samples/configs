@@ -1,5 +1,20 @@
 call plug#begin()
 
+    " use w, e and b to move through camelCase
+    Plug 'https://github.com/bkad/CamelCaseMotion.git'
+    
+    " Change color of the line number based on the editing mode
+    Plug 'mawkler/modicator.nvim'
+
+    " Highlight cursor line and word under cursor
+    Plug 'https://github.com/yamatsum/nvim-cursorline.git'
+
+    " Smooth scrolling
+    Plug 'declancm/cinnamon.nvim',
+
+    " Create missing directories on file save
+    Plug 'jghauser/mkdir.nvim'
+
     " useful for use with DAP ui
     Plug 'folke/neodev.nvim'
 
@@ -8,6 +23,9 @@ call plug#begin()
 
     " Bufferline bar
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+
+    " Discord rich-presence
+    " Plug 'andweeb/presence.nvim'
 
     " DAP 
     Plug 'mfussenegger/nvim-dap'
@@ -84,10 +102,10 @@ call plug#begin()
     Plug 'terrortylor/nvim-comment'
 
     " Startify
-	Plug 'mhinz/vim-startify'
+    Plug 'mhinz/vim-startify'
 
     " Colorscheme
-	Plug 'ellisonleao/gruvbox.nvim'
+    Plug 'ellisonleao/gruvbox.nvim'
 
     " AS
     Plug 'Pocco81/auto-save.nvim'
@@ -130,6 +148,8 @@ nnoremap <F8> :lua require'dap'.step_into()<CR>
 nnoremap <F6> :lua require("dapui").toggle()<CR>
 nnoremap <F9> :lua require'dap'.step_out()<CR>
 
+" CamelCaseMotion
+" let g:camelcasemotion_key = '<leader>'
 
 " nnoremap <F6> :lua require'dap'.repl.open()<CR>
 
@@ -166,6 +186,7 @@ let g:ale_fixers = {
     \ 'javascript': ['prettier'],
     \ 'html': ['prettier'],
     \ 'css': ['prettier'],
+    \ 'typescript': ['prettier'],
     \'*': ['remove_trailing_lines', 'trim_whitespace'],
     \ }
 let g:ale_sign_error = '❌'
@@ -178,6 +199,7 @@ set softtabstop=2
 set tabstop=2
 set autoindent
 set scrolloff=5
+set cursorline
 
 " Search and case
 set ignorecase
@@ -188,6 +210,7 @@ set nohlsearch
 " Disable autocommenting on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+
 source ~/.config/nvim/lua/init.lua
 source ~/.config/nvim/lua/plugins/01treesitter.lua
 " source ~/.config/nvim/lua/plugins/coc.lua
@@ -197,3 +220,7 @@ source ~/.config/nvim/lua/plugins/formatter.lua
 source ~/.config/nvim/lua/plugins/windows.lua
 source ~/.config/nvim/lua/plugins/DAP.lua
 source ~/.config/nvim/lua/plugins/bufferline.lua
+source ~/.config/nvim/lua/plugins/cinnamon.lua
+source ~/.config/nvim/lua/plugins/cursorline.lua
+source ~/.config/nvim/lua/plugins/CamelCaseMotion.vim
+" source ~/.config/nvim/lua/plugins/presence.lua

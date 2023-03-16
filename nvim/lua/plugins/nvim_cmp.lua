@@ -9,7 +9,7 @@ snippet = {
     -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-    vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+    -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
   end,
 },
 window = {
@@ -17,17 +17,19 @@ window = {
   -- documentation = cmp.config.window.bordered(),
 },
 mapping = cmp.mapping.preset.insert({
+  ['<Tab>'] = cmp.mapping.select_next_item(),
+  ['<S-Tab>'] = cmp.mapping.select_prev_item(),
   ['<C-b>'] = cmp.mapping.scroll_docs(-4),
   ['<C-f>'] = cmp.mapping.scroll_docs(4),
   ['<C-Space>'] = cmp.mapping.complete(),
   ['<C-e>'] = cmp.mapping.abort(),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 }),
 sources = cmp.config.sources({
   { name = 'nvim_lsp' },
   -- { name = 'vsnip' }, -- For vsnip users.
   -- { name = 'luasnip' }, -- For luasnip users.
-  { name = 'ultisnips' }, -- For ultisnips users.
+  -- { name = 'ultisnips' }, -- For ultisnips users.
   -- { name = 'snippy' }, -- For snippy users.
 }, {
   { name = 'buffer' },
@@ -64,15 +66,39 @@ sources = cmp.config.sources({
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
- require('lspconfig')['html'].setup {
-   capabilities = capabilities
- }
- require('lspconfig')['tsserver'].setup {
-   capabilities = capabilities
- }
- require('lspconfig')['cssls'].setup {
-   capabilities = capabilities
- }
+require('lspconfig')['html'].setup {
+  capabilities = capabilities
+}
+require('lspconfig')['tsserver'].setup {
+  capabilities = capabilities
+}
+require('lspconfig')['cssls'].setup {
+  capabilities = capabilities
+}
+-- require('lspconfig')['typescript-language-server'].setup {
+--   capabilities = capabilities
+-- }
+ -- require('lspconfig')['rust_analyzer'].setup {
+ --  capabilities = capabilities,
+ --  on_attach = on_attach,
+ --  cmd = {
+ --    "rustup",
+ --    "run",
+ --    "stable",
+ --    "rust-analyzer",
+ --  }
+ -- }
+require'lspconfig'.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
+
 
 -- End of nvim-cmp
 

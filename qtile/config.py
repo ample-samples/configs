@@ -164,9 +164,12 @@ for i in groups:
         ]
     )
 
+UNIVERSAL_MARGINS = 5
+UM = UNIVERSAL_MARGINS
+
 layouts = [
     layout.Columns(
-        margin=[5, 5, 5, 5],
+        margin=UM,
         border_width=4,
         border_focus=foreground,
         border_normal='#282828',
@@ -249,7 +252,7 @@ screens = [
             ],
             24,
             background='#282828',
-            margin=[5, 5, 0, 5],
+            margin=[UM, UM, 0, UM],
             opacity=0.85,
             x11_drag_polling_rate=72,
         ),
