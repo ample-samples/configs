@@ -128,11 +128,12 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle the focused window between floating and stacked states"),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle the focused window between floating and stacked states"),
     # Custom keybinds
-    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod, "control"], "o", lazy.spawn('obsidian')),
     Key([mod], "e", lazy.spawn('alacritty -e nvim')),
+    Key([mod], "b", lazy.hide_show_bar(position="top")),
 
 
 ]

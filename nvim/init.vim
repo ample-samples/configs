@@ -127,6 +127,10 @@ call plug#begin()
     Plug 'hrsh7th/nvim-cmp'
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
+    " For luasnip users.
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'rafamadriz/friendly-snippets'
 
     " Plug 'SirVer/ultisnips'
     " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -148,6 +152,31 @@ nnoremap <F8> :lua require'dap'.step_into()<CR>
 nnoremap <F6> :lua require("dapui").toggle()<CR>
 nnoremap <F9> :lua require'dap'.step_out()<CR>
 
+" Luasnip
+" inoremap <silent> <C-K> <cmd>lua ls.expand()<Cr>
+" inoremap <silent> <C-L> <cmd>lua ls.jump(1)<Cr>
+" inoremap <silent> <C-J> <cmd>lua ls.jump(-1)<Cr>
+" snoremap <silent> <C-L> <cmd>lua ls.jump(1)<Cr>
+" snoremap <silent> <C-J> <cmd>lua ls.jump(-1)<Cr>
+" imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : ''
+" smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : ''
+" imap <silent><expr> <C-S-E> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : ''
+" smap <silent><expr> <C-S-E> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : ''
+  "
+  " " press <Tab> to expand or jump in a snippet. These can also be mapped separately
+  " " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+  " imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+  " " -1 for jumping backwards.
+  " inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+  "
+  " snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+  " snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+  "
+  " " For changing choices in choiceNodes (not strictly necessary for a basic setup).
+  " imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+  " smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+" End luasnip
+
 " CamelCaseMotion
 " let g:camelcasemotion_key = '<leader>'
 
@@ -158,6 +187,9 @@ nnoremap <F9> :lua require'dap'.step_out()<CR>
 
 " Use system clipboard
 " set clipboard+=unnamedplus
+
+" Startify
+nnoremap <leader>h :Startify<CR>
 
 " Center screen on enter Insert mode
 autocmd InsertEnter * norm zz
@@ -223,4 +255,5 @@ source ~/.config/nvim/lua/plugins/bufferline.lua
 source ~/.config/nvim/lua/plugins/cinnamon.lua
 source ~/.config/nvim/lua/plugins/cursorline.lua
 source ~/.config/nvim/lua/plugins/CamelCaseMotion.vim
+source ~/.config/nvim/lua/plugins/luasnip.lua
 " source ~/.config/nvim/lua/plugins/presence.lua
