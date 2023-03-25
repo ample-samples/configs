@@ -1,5 +1,14 @@
 call plug#begin()
 
+    " fugitive for git integration
+    Plug 'tpope/vim-fugitive'
+
+    " colorizer for hex colours
+    Plug 'norcalli/nvim-colorizer.lua'
+
+    " live-server
+    Plug 'aurum77/live-server.nvim'
+
     " use w, e and b to move through camelCase
     Plug 'https://github.com/bkad/CamelCaseMotion.git'
     
@@ -152,6 +161,10 @@ nnoremap <F8> :lua require'dap'.step_into()<CR>
 nnoremap <F6> :lua require("dapui").toggle()<CR>
 nnoremap <F9> :lua require'dap'.step_out()<CR>
 
+    " telescope
+nnoremap <leader>b :Telescope buffers<CR>
+nnoremap <leader>gf :Telescope git_files<CR>
+
 " Luasnip
 " inoremap <silent> <C-K> <cmd>lua ls.expand()<Cr>
 " inoremap <silent> <C-L> <cmd>lua ls.jump(1)<Cr>
@@ -187,6 +200,9 @@ nnoremap <F9> :lua require'dap'.step_out()<CR>
 
 " Use system clipboard
 " set clipboard+=unnamedplus
+
+" Auto-change directory to that of the currently opened file
+autocmd BufEnter * lcd %:p:h
 
 " Startify
 nnoremap <leader>h :Startify<CR>
@@ -257,3 +273,5 @@ source ~/.config/nvim/lua/plugins/cursorline.lua
 source ~/.config/nvim/lua/plugins/CamelCaseMotion.vim
 source ~/.config/nvim/lua/plugins/luasnip.lua
 " source ~/.config/nvim/lua/plugins/presence.lua
+source ~/.config/nvim/lua/plugins/live-server.lua
+source ~/.config/nvim/lua/plugins/colorizer.lua

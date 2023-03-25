@@ -134,6 +134,7 @@ keys = [
     Key([mod, "control"], "o", lazy.spawn('obsidian')),
     Key([mod], "e", lazy.spawn('alacritty -e nvim')),
     Key([mod], "b", lazy.hide_show_bar(position="top")),
+    Key([mod, "shift"], "s", lazy.spawn('flameshot gui')),
 
 
 ]
@@ -212,10 +213,10 @@ screens = [
                 #         ]
                 #     ),
                 # widget.CurrentLayout(),
-                widget.Prompt(
-                    font="DroidSansMono Nerd Font",
-                    cursor_color=foreground
-                ),
+                # widget.Prompt(
+                #     font="DroidSansMono Nerd Font",
+                #     cursor_color=foreground
+                # ),
                 widget.GroupBox(
                     rounded=False,
                     hide_unused=True,
