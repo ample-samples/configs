@@ -1,5 +1,12 @@
 call plug#begin()
 
+    " telescope file-browser
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
+
+    " auto-session and telescope integration
+    " Plug 'rmagatti/auto-session'
+    " Plug 'rmagatti/session-lens'
+
     " fugitive for git integration
     Plug 'tpope/vim-fugitive'
 

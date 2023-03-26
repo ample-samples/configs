@@ -32,11 +32,22 @@ require("nvim-tree").setup()
 require("nvim-surround").setup()
 require('telescope').setup {}
 require('telescope').load_extension('fzf')
+require("telescope").setup {}
+-- require('session-lens').setup {}
 require("nvim-autopairs").setup {}
 require("leap").set_default_keymaps()
 require("mason").setup()
 require("mason-lspconfig").setup()
 require('modicator').setup()
+
+-- telescope-file-browser
+vim.api.nvim_set_keymap(
+   "n",
+   "<space>fb",
+   "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+   {noremap = true}
+)
+
 
 -- Remove EOB end of buffer characters
 vim.opt.fillchars:append { eob = " " }
