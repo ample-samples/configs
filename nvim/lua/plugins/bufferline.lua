@@ -1,5 +1,6 @@
 require("bufferline").setup{
-    options = {
-        numbers = "buffer_id"
+    options = { 
+      offsets = {{ filetype = "NvimTree", text = "", padding = 1}}
+    --     numbers = "buffer_id"
     }
 }

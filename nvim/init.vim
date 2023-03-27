@@ -156,6 +156,8 @@ call plug#end()
 
 let mapleader=" "
 " Start of keymaps
+nnoremap <S-L> :bnext<CR>
+nnoremap <S-H> :bprevious<CR>
 
     " Nvim-tree
 nnoremap <leader>t :NvimTreeFindFileToggle<CR>
@@ -170,7 +172,7 @@ nnoremap <F9> :lua require'dap'.step_out()<CR>
 
     " telescope
 nnoremap <leader>b :Telescope buffers<CR>
-nnoremap <leader>gf :Telescope git_files<CR>
+nnoremap <leader>fg :Telescope git_files<CR>
 
 " Luasnip
 " inoremap <silent> <C-K> <cmd>lua ls.expand()<Cr>
