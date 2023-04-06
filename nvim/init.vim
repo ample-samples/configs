@@ -1,5 +1,11 @@
 call plug#begin()
 
+    "open URI with browser
+    Plug 'tyru/open-browser.vim'
+
+    "open repo on GitHub
+    Plug 'https://github.com/tyru/open-browser-github.vim'
+
     " telescope file-browser
     Plug 'nvim-telescope/telescope-file-browser.nvim'
 
@@ -229,6 +235,7 @@ set nowrap
 set title
 set noerrorbells
 set wildmenu
+set relativenumber
 
 set termguicolors
 colorscheme gruvbox
@@ -256,6 +263,7 @@ set softtabstop=2
 set tabstop=2
 set autoindent
 set scrolloff=5
+set sidescrolloff=10
 set cursorline
 
 " Search and case
