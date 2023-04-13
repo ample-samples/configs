@@ -1,5 +1,8 @@
 call plug#begin()
 
+    " Indent guidlines
+    Plug 'lukas-reineke/indent-blankline.nvim'
+
     "open URI with browser
     Plug 'tyru/open-browser.vim'
 
@@ -153,6 +156,7 @@ call plug#begin()
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'rafamadriz/friendly-snippets'
+    Plug 'dcampos/cmp-emmet-vim'
 
     " Plug 'SirVer/ultisnips'
     " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -164,6 +168,7 @@ let mapleader=" "
 " Start of keymaps
 nnoremap <S-L> :bnext<CR>
 nnoremap <S-H> :bprevious<CR>
+nnoremap <C-B>c :bd<CR>
 
     " Nvim-tree
 nnoremap <leader>t :NvimTreeFindFileToggle<CR>
@@ -235,7 +240,7 @@ set nowrap
 set title
 set noerrorbells
 set wildmenu
-set relativenumber
+" set relativenumber
 
 set termguicolors
 colorscheme gruvbox

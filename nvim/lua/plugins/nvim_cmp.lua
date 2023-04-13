@@ -33,6 +33,7 @@ sources = cmp.config.sources({
   -- { name = 'snippy' }, -- For snippy users.
 }, {
   { name = 'buffer' },
+  { name = 'emmet_vim' },
 })
 })
 
