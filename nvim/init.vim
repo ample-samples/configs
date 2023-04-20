@@ -1,4 +1,6 @@
 call plug#begin()
+    " better cut, delete, and yank behaviour
+    Plug 'tenxsoydev/karen-yank.nvim'
 
     " Indent guidlines
     Plug 'lukas-reineke/indent-blankline.nvim'
@@ -247,15 +249,17 @@ colorscheme gruvbox
 let g:airline_theme='base16_gruvbox_dark_soft'
 highlight Normal guibg=none
 highlight NonText guibg=none
+highlight clear SignColumn
+
 
 let g:bracey_server_port=5151
 
 " Set ESLint as your plugging manager
 let g:ale_fixers = {
-    \ 'javascript': ['prettier'],
+    \ 'javascript': ['prettier-eslint'],
     \ 'html': ['prettier'],
     \ 'css': ['prettier'],
-    \ 'typescript': ['prettier'],
+    \ 'typescript': ['prettier-eslint'],
     \'*': ['remove_trailing_lines', 'trim_whitespace'],
     \ }
 let g:ale_sign_error = '❌'
