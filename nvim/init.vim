@@ -1,4 +1,7 @@
 call plug#begin()
+    " floating terminal
+    Plug 'numToStr/FTerm.nvim'
+
     " better cut, delete, and yank behaviour
     Plug 'tenxsoydev/karen-yank.nvim'
 
@@ -26,6 +29,9 @@ call plug#begin()
 
     " live-server
     Plug 'aurum77/live-server.nvim'
+
+    " other live-server
+    " Plug 'barrett-ruth/live-server.nvim'
 
     " use w, e and b to move through camelCase
     Plug 'https://github.com/bkad/CamelCaseMotion.git'
@@ -242,7 +248,7 @@ set nowrap
 set title
 set noerrorbells
 set wildmenu
-" set relativenumber
+set relativenumber
 
 set termguicolors
 colorscheme gruvbox
@@ -301,3 +307,4 @@ source ~/.config/nvim/lua/plugins/luasnip.lua
 " source ~/.config/nvim/lua/plugins/presence.lua
 source ~/.config/nvim/lua/plugins/live-server.lua
 source ~/.config/nvim/lua/plugins/colorizer.lua
+source ~/.config/nvim/lua/plugins/FTerm.lua
