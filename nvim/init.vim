@@ -1,9 +1,9 @@
 call plug#begin()
     " floating terminal
-    Plug 'numToStr/FTerm.nvim'
+    " Plug 'numToStr/FTerm.nvim'
 
     " better cut, delete, and yank behaviour
-    Plug 'tenxsoydev/karen-yank.nvim'
+    " Plug 'tenxsoydev/karen-yank.nvim'
 
     " Indent guidlines
     Plug 'lukas-reineke/indent-blankline.nvim'
@@ -193,6 +193,12 @@ nnoremap <F9> :lua require'dap'.step_out()<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>fg :Telescope git_files<CR>
 
+
+nnoremap <F3> :silent update<Bar>silent !xdg-open %:p &<CR>
+
+
+tnoremap <C-Esc> <C-\><C-n>
+
 " Luasnip
 " inoremap <silent> <C-K> <cmd>lua ls.expand()<Cr>
 " inoremap <silent> <C-L> <cmd>lua ls.jump(1)<Cr>
@@ -266,6 +272,8 @@ let g:ale_fixers = {
     \ 'html': ['prettier'],
     \ 'css': ['prettier'],
     \ 'typescript': ['prettier-eslint'],
+    \ 'lua': ['lua-language-server'],
+    \ 'vim': ['vimls'],
     \'*': ['remove_trailing_lines', 'trim_whitespace'],
     \ }
 let g:ale_sign_error = '❌'
@@ -307,4 +315,5 @@ source ~/.config/nvim/lua/plugins/luasnip.lua
 " source ~/.config/nvim/lua/plugins/presence.lua
 source ~/.config/nvim/lua/plugins/live-server.lua
 source ~/.config/nvim/lua/plugins/colorizer.lua
-source ~/.config/nvim/lua/plugins/FTerm.lua
+source ~/.config/nvim/lua/plugins/mason-lspconfig.lua
+" source ~/.config/nvim/lua/plugins/FTerm.lua

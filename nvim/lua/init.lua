@@ -39,7 +39,7 @@ require("leap").set_default_keymaps()
 require("mason").setup()
 require("mason-lspconfig").setup()
 require('modicator').setup()
-require("karen-yank").setup()
+-- require("karen-yank").setup()
 
 -- telescope-file-browser
 vim.api.nvim_set_keymap(
