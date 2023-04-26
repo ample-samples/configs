@@ -1,4 +1,8 @@
 call plug#begin()
+    " code folding
+    Plug 'kevinhwang91/promise-async'
+    Plug 'https://github.com/kevinhwang91/nvim-ufo.git'
+
     " floating terminal
     " Plug 'numToStr/FTerm.nvim'
 
@@ -193,11 +197,17 @@ nnoremap <F9> :lua require'dap'.step_out()<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>fg :Telescope git_files<CR>
 
-
+" Open file using system default program, useful for HTML and web dev
 nnoremap <F3> :silent update<Bar>silent !xdg-open %:p &<CR>
 
-
 tnoremap <C-Esc> <C-\><C-n>
+
+" LSP hover
+nnoremap <C-K> :lua vim.lsp.buf.hover()<CR>
+
+" Folding
+nnoremap <leader>fc :foldclose<CR>
+nnoremap <leader>fo :foldopen<CR>
 
 " Luasnip
 " inoremap <silent> <C-K> <cmd>lua ls.expand()<Cr>
@@ -263,6 +273,12 @@ highlight Normal guibg=none
 highlight NonText guibg=none
 highlight clear SignColumn
 
+" Save/load folds on file save/load
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * silent! mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 let g:bracey_server_port=5151
 
@@ -316,4 +332,5 @@ source ~/.config/nvim/lua/plugins/luasnip.lua
 source ~/.config/nvim/lua/plugins/live-server.lua
 source ~/.config/nvim/lua/plugins/colorizer.lua
 source ~/.config/nvim/lua/plugins/mason-lspconfig.lua
+source ~/.config/nvim/lua/plugins/ufo.lua
 " source ~/.config/nvim/lua/plugins/FTerm.lua
