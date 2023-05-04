@@ -1,4 +1,10 @@
 call plug#begin()
+    "undotree
+    Plug 'mbbill/undotree'
+
+    " trouble
+    Plug 'folke/trouble.nvim'
+
     " code folding
     Plug 'kevinhwang91/promise-async'
     Plug 'https://github.com/kevinhwang91/nvim-ufo.git'
@@ -196,6 +202,13 @@ nnoremap <F9> :lua require'dap'.step_out()<CR>
     " telescope
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>fg :Telescope git_files<CR>
+    " telescope + LSP
+nnoremap <leader>ld :Telescope lsp_definitions<CR>
+nnoremap <leader>lr :Telescope lsp_references<CR>
+nnoremap <leader>ls :Telescope lsp_document_symbols<CR>
+nnoremap <leader>li :Telescope lsp_implementations<CR>
+
+
 
 " Open file using system default program, useful for HTML and web dev
 nnoremap <F3> :silent update<Bar>silent !xdg-open %:p &<CR>
@@ -245,8 +258,27 @@ nnoremap <leader>fo :foldopen<CR>
 " Use system clipboard
 " set clipboard+=unnamedplus
 
+" Set .js files to use .jsx FileType
+augroup filetype_jsx
+    autocmd!
+    autocmd FileType javascript set filetype=javascriptreact
+augroup END
+
+if has("persistent_undo")
+   let target_path = expand('~/.undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
+
 " Auto-change directory to that of the currently opened file
-autocmd BufEnter * lcd %:p:h
+autocmd BufEnter * silent! lcd %:p:h
 
 " Startify
 nnoremap <leader>h :Startify<CR>
