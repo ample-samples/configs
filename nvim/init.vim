@@ -213,7 +213,7 @@ nnoremap <leader>li :Telescope lsp_implementations<CR>
 " Open file using system default program, useful for HTML and web dev
 nnoremap <F3> :silent update<Bar>silent !xdg-open %:p &<CR>
 
-tnoremap <C-Esc> <C-\><C-n>
+tnoremap <S-Esc> <C-\><C-n>
 
 " LSP hover
 nnoremap <C-K> :lua vim.lsp.buf.hover()<CR>
@@ -316,7 +316,8 @@ let g:bracey_server_port=5151
 
 " Set ESLint as your plugging manager
 let g:ale_fixers = {
-    \ 'javascript': ['prettier-eslint'],
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'javascriptreact': ['prettier', 'eslint'],
     \ 'html': ['prettier'],
     \ 'css': ['prettier'],
     \ 'typescript': ['prettier-eslint'],
@@ -366,3 +367,4 @@ source ~/.config/nvim/lua/plugins/colorizer.lua
 source ~/.config/nvim/lua/plugins/mason-lspconfig.lua
 source ~/.config/nvim/lua/plugins/ufo.lua
 " source ~/.config/nvim/lua/plugins/FTerm.lua
+source ~/.config/nvim/lua/plugins/load-last.vim
