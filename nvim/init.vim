@@ -1,4 +1,9 @@
 call plug#begin()
+
+    " tabnine
+    Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+    Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+
     "undotree
     Plug 'mbbill/undotree'
 
@@ -222,6 +227,9 @@ nnoremap <C-K> :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>fc :foldclose<CR>
 nnoremap <leader>fo :foldopen<CR>
 
+" undotree toggle
+nnoremap <leader>u :UndotreeToggle<CR>
+
 " Luasnip
 " inoremap <silent> <C-K> <cmd>lua ls.expand()<Cr>
 " inoremap <silent> <C-L> <cmd>lua ls.jump(1)<Cr>
@@ -367,4 +375,7 @@ source ~/.config/nvim/lua/plugins/colorizer.lua
 source ~/.config/nvim/lua/plugins/mason-lspconfig.lua
 source ~/.config/nvim/lua/plugins/ufo.lua
 " source ~/.config/nvim/lua/plugins/FTerm.lua
+" source ~/.config/nvim/lua/plugins/cmp-tabnine.lua
+source ~/.config/nvim/lua/plugins/tabnine.lua
 source ~/.config/nvim/lua/plugins/load-last.vim
+source ~/.config/nvim/lua/plugins/load-last.lua

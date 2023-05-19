@@ -133,6 +133,7 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod, "control"], "o", lazy.spawn('obsidian')),
     Key([mod], "e", lazy.spawn('alacritty -e nvim')),
+    # Key([mod, "shift"], "e", lazy.spawn('exo-open /usr/share/applications/neovide.desktop')),
     Key([mod], "b", lazy.hide_show_bar(position="top")),
     Key([mod, "shift"], "s", lazy.spawn('flameshot gui')),
 
@@ -309,4 +310,4 @@ auto_minimize = True
 wmname = "Qtile"
 
 
-x11_drag_polling_rate = 10
+x11_drag_polling_rate = 72
