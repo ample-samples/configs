@@ -1,4 +1,3 @@
-
 " Neovide settings
 if exists("g:neovide")
   let g:neovide_transparency = 0.8

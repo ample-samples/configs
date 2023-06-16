@@ -136,6 +136,8 @@ keys = [
     # Key([mod, "shift"], "e", lazy.spawn('exo-open /usr/share/applications/neovide.desktop')),
     Key([mod], "b", lazy.hide_show_bar(position="top")),
     Key([mod, "shift"], "s", lazy.spawn('flameshot gui')),
+    # Key([mod, "shift"], "е", lazy.spawn('setxkbmap -layout gb')),
+    # Key([mod, "shift"], "r", lazy.spawn('setxkbmap -layout ru -variant phonetic')),
 
 
 ]

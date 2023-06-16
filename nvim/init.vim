@@ -1,5 +1,11 @@
 call plug#begin()
 
+    " Oil file browser
+    " Plug 'stevearc/oil.nvim'
+
+    " codium
+    " Plug 'Exafunction/codeium.vim'
+
     " tabnine
     Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
     Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
@@ -181,6 +187,7 @@ call plug#begin()
     Plug 'rafamadriz/friendly-snippets'
     Plug 'dcampos/cmp-emmet-vim'
 
+
     " Plug 'SirVer/ultisnips'
     " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
     " End of nvim-cmp
@@ -212,6 +219,7 @@ nnoremap <leader>ld :Telescope lsp_definitions<CR>
 nnoremap <leader>lr :Telescope lsp_references<CR>
 nnoremap <leader>ls :Telescope lsp_document_symbols<CR>
 nnoremap <leader>li :Telescope lsp_implementations<CR>
+
 
 
 
@@ -342,6 +350,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set autoindent
+set smartindent
 set scrolloff=5
 set sidescrolloff=10
 set cursorline
